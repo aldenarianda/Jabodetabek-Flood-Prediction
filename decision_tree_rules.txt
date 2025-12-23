@@ -1,0 +1,288 @@
+Decision Tree Rules - Flood Prediction
+================================================================================
+
+Model Parameters:
+  Criterion: entropy
+  Max Depth: 10
+  Min Samples Split: 20
+  Min Samples Leaf: 1
+  Tree Depth: 10
+  Number of Leaves: 92
+  Test Accuracy: 0.9393
+
+================================================================================
+
+|--- landcover_encoded <= 9.50
+|   |--- jumlah_penduduk <= 54062.50
+|   |   |--- population_density_proxy <= 6647.90
+|   |   |   |--- landcover_encoded <= 8.50
+|   |   |   |   |--- avg_rainfall <= 3.40
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- avg_rainfall >  3.40
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- landcover_encoded >  8.50
+|   |   |   |   |--- soil_moisture <= 39.45
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- soil_moisture >  39.45
+|   |   |   |   |   |--- class: 1
+|   |   |--- population_density_proxy >  6647.90
+|   |   |   |--- jumlah_penduduk <= 46255.00
+|   |   |   |   |--- vegetation_moisture <= 7.63
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- vegetation_moisture >  7.63
+|   |   |   |   |   |--- month <= 6.50
+|   |   |   |   |   |   |--- ndvi <= 0.44
+|   |   |   |   |   |   |   |--- rainfall_intensity <= 2.51
+|   |   |   |   |   |   |   |   |--- max_rainfall <= 46.04
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- max_rainfall >  46.04
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- rainfall_intensity >  2.51
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- ndvi >  0.44
+|   |   |   |   |   |   |   |--- month <= 2.50
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- month >  2.50
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- month >  6.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- jumlah_penduduk >  46255.00
+|   |   |   |   |--- population_density_proxy <= 7481.78
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- population_density_proxy >  7481.78
+|   |   |   |   |   |--- class: 1
+|   |--- jumlah_penduduk >  54062.50
+|   |   |--- avg_rainfall <= 32.00
+|   |   |   |--- avg_rainfall <= 14.63
+|   |   |   |   |--- avg_temperature <= 30.84
+|   |   |   |   |   |--- slope <= 0.10
+|   |   |   |   |   |   |--- max_rainfall <= 7.52
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- max_rainfall >  7.52
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- slope >  0.10
+|   |   |   |   |   |   |--- landcover_encoded <= 8.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- landcover_encoded >  8.50
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- avg_temperature >  30.84
+|   |   |   |   |   |--- slope <= 0.10
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- slope >  0.10
+|   |   |   |   |   |   |--- avg_temperature <= 37.16
+|   |   |   |   |   |   |   |--- avg_rainfall <= 2.55
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- avg_rainfall >  2.55
+|   |   |   |   |   |   |   |   |--- population_density_proxy <= 6752.50
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- population_density_proxy >  6752.50
+|   |   |   |   |   |   |   |   |   |--- ndvi <= 0.47
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- ndvi >  0.47
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- avg_temperature >  37.16
+|   |   |   |   |   |   |   |--- soil_moisture <= 27.89
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- soil_moisture >  27.89
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |--- avg_rainfall >  14.63
+|   |   |   |   |--- month <= 2.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- month >  2.50
+|   |   |   |   |   |--- landcover_encoded <= 8.50
+|   |   |   |   |   |   |--- landcover_encoded <= 7.50
+|   |   |   |   |   |   |   |--- slope <= 0.11
+|   |   |   |   |   |   |   |   |--- soil_moisture <= 38.67
+|   |   |   |   |   |   |   |   |   |--- vegetation_moisture <= 13.12
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- vegetation_moisture >  13.12
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- soil_moisture >  38.67
+|   |   |   |   |   |   |   |   |   |--- population_density_proxy <= 9442.17
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- population_density_proxy >  9442.17
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- slope >  0.11
+|   |   |   |   |   |   |   |   |--- rainfall_intensity <= 2.74
+|   |   |   |   |   |   |   |   |   |--- jumlah_penduduk <= 269482.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- jumlah_penduduk >  269482.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- rainfall_intensity >  2.74
+|   |   |   |   |   |   |   |   |   |--- jumlah_penduduk <= 64891.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- jumlah_penduduk >  64891.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- landcover_encoded >  7.50
+|   |   |   |   |   |   |   |--- vegetation_moisture <= 13.54
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- vegetation_moisture >  13.54
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- landcover_encoded >  8.50
+|   |   |   |   |   |   |--- soil_moisture <= 35.25
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- soil_moisture >  35.25
+|   |   |   |   |   |   |   |--- soil_moisture <= 35.28
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- soil_moisture >  35.28
+|   |   |   |   |   |   |   |   |--- rainfall_intensity <= 2.50
+|   |   |   |   |   |   |   |   |   |--- month <= 7.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- month >  7.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- rainfall_intensity >  2.50
+|   |   |   |   |   |   |   |   |   |--- jumlah_penduduk <= 164719.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- jumlah_penduduk >  164719.00
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |--- avg_rainfall >  32.00
+|   |   |   |--- landcover_encoded <= 8.50
+|   |   |   |   |--- landcover_encoded <= 7.50
+|   |   |   |   |   |--- avg_rainfall <= 64.85
+|   |   |   |   |   |   |--- landcover_encoded <= 0.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- landcover_encoded >  0.50
+|   |   |   |   |   |   |   |--- ndvi <= 0.59
+|   |   |   |   |   |   |   |   |--- month <= 1.50
+|   |   |   |   |   |   |   |   |   |--- rainfall_intensity <= 1.37
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- rainfall_intensity >  1.37
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- month >  1.50
+|   |   |   |   |   |   |   |   |   |--- elevation <= 356.90
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- elevation >  356.90
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- ndvi >  0.59
+|   |   |   |   |   |   |   |   |--- slope <= 0.15
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- slope >  0.15
+|   |   |   |   |   |   |   |   |   |--- jumlah_penduduk <= 96931.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- jumlah_penduduk >  96931.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- avg_rainfall >  64.85
+|   |   |   |   |   |   |--- elevation_slope_ratio <= 52.67
+|   |   |   |   |   |   |   |--- ndvi <= 0.52
+|   |   |   |   |   |   |   |   |--- month <= 3.00
+|   |   |   |   |   |   |   |   |   |--- rainfall_intensity <= 1.61
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- rainfall_intensity >  1.61
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- month >  3.00
+|   |   |   |   |   |   |   |   |   |--- month <= 11.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- month >  11.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- ndvi >  0.52
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- elevation_slope_ratio >  52.67
+|   |   |   |   |   |   |   |--- soil_moisture <= 37.40
+|   |   |   |   |   |   |   |   |--- rainfall_intensity <= 2.13
+|   |   |   |   |   |   |   |   |   |--- avg_temperature <= 33.92
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- avg_temperature >  33.92
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- rainfall_intensity >  2.13
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- soil_moisture >  37.40
+|   |   |   |   |   |   |   |   |--- elevation_slope_ratio <= 91.54
+|   |   |   |   |   |   |   |   |   |--- ndvi <= 0.33
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- ndvi >  0.33
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- elevation_slope_ratio >  91.54
+|   |   |   |   |   |   |   |   |   |--- slope <= 0.60
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- slope >  0.60
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- landcover_encoded >  7.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- landcover_encoded >  8.50
+|   |   |   |   |--- month <= 1.50
+|   |   |   |   |   |--- avg_rainfall <= 57.77
+|   |   |   |   |   |   |--- elevation_slope_ratio <= 55.22
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- elevation_slope_ratio >  55.22
+|   |   |   |   |   |   |   |--- rainfall_intensity <= 1.71
+|   |   |   |   |   |   |   |   |--- elevation_slope_ratio <= 79.32
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- elevation_slope_ratio >  79.32
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- rainfall_intensity >  1.71
+|   |   |   |   |   |   |   |   |--- max_rainfall <= 85.97
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- max_rainfall >  85.97
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- avg_rainfall >  57.77
+|   |   |   |   |   |   |--- ndvi <= 0.31
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- ndvi >  0.31
+|   |   |   |   |   |   |   |--- population_density_proxy <= 3133.28
+|   |   |   |   |   |   |   |   |--- max_rainfall <= 126.21
+|   |   |   |   |   |   |   |   |   |--- rainfall_intensity <= 1.55
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- rainfall_intensity >  1.55
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- max_rainfall >  126.21
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- population_density_proxy >  3133.28
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- month >  1.50
+|   |   |   |   |   |--- jumlah_penduduk <= 188907.50
+|   |   |   |   |   |   |--- elevation_slope_ratio <= 39.49
+|   |   |   |   |   |   |   |--- rainfall_intensity <= 1.56
+|   |   |   |   |   |   |   |   |--- month <= 3.50
+|   |   |   |   |   |   |   |   |   |--- soil_moisture <= 38.97
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- soil_moisture >  38.97
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- month >  3.50
+|   |   |   |   |   |   |   |   |   |--- elevation <= 12.76
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- elevation >  12.76
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- rainfall_intensity >  1.56
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- elevation_slope_ratio >  39.49
+|   |   |   |   |   |   |   |--- jumlah_penduduk <= 70175.00
+|   |   |   |   |   |   |   |   |--- rainfall_intensity <= 2.57
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- rainfall_intensity >  2.57
+|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- jumlah_penduduk >  70175.00
+|   |   |   |   |   |   |   |   |--- jumlah_penduduk <= 75195.00
+|   |   |   |   |   |   |   |   |   |--- avg_temperature <= 25.45
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- avg_temperature >  25.45
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- jumlah_penduduk >  75195.00
+|   |   |   |   |   |   |   |   |   |--- month <= 10.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- month >  10.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- jumlah_penduduk >  188907.50
+|   |   |   |   |   |   |--- soil_moisture <= 40.56
+|   |   |   |   |   |   |   |--- soil_moisture <= 37.40
+|   |   |   |   |   |   |   |   |--- soil_moisture <= 36.93
+|   |   |   |   |   |   |   |   |   |--- ndvi <= 0.56
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- ndvi >  0.56
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- soil_moisture >  36.93
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- soil_moisture >  37.40
+|   |   |   |   |   |   |   |   |--- max_rainfall <= 50.04
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- max_rainfall >  50.04
+|   |   |   |   |   |   |   |   |   |--- avg_temperature <= 33.05
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- avg_temperature >  33.05
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- soil_moisture >  40.56
+|   |   |   |   |   |   |   |--- class: 1
+|--- landcover_encoded >  9.50
+|   |--- avg_rainfall <= 5.57
+|   |   |--- class: 1
+|   |--- avg_rainfall >  5.57
+|   |   |--- class: 1

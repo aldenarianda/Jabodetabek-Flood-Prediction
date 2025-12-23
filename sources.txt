@@ -1,0 +1,5 @@
+Dataset ini adalah dataset utama berformat CSV
+https://www.kaggle.com/datasets/yusufginanjar7/banjir-jabodetabek
+
+Dataset ini digunakan untuk mendapatkan data jumlah penduduk dan lainnya. berformat geojson oleh karena itu harus diubah terlebih dahulu
+https://www.kaggle.com/datasets/afiskandr/jumlah-penduduk-per-kecamatan-di-indonesia-2023
